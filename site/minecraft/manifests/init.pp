@@ -15,7 +15,8 @@ class minecraft {
     content => 'eula=true',
   }
   file {'/etc/systemd/system/minecraft.service':
-    ensure => present,
+    ensure => file,
+
     
   }
 }
