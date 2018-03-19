@@ -10,13 +10,13 @@ class minecraft {
   package {'java':
     ensure => present,
   }
-  file {'eula.txt':
+  file {'/opt/minecraft/eula.txt':
     ensure => file,
     content => 'eula=true',
   }
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
-
+    source => 'puppet:///modules/minecraft/mincraft.service',
     
   }
 }
